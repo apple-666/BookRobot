@@ -1,0 +1,44 @@
+
+-------------22号 羽毛球
+# order1;
+fieldId=1540192908268883969
+fieldName=三号场
+
+fieldId=1540193139911905282
+fieldName=九号场
+orderType=1
+stadiumId=2c93809e821eb0ed01822a128aac00b7
+stadiumItemId=2c93809e821eb0ed01822a128aaf00b8
+stadiumSource=2022029
+
+
+# order2;
+fieldId=1540192832603639809
+fieldName=一号场
+
+
+#order3;
+fieldId=1540193139911905282
+fieldName=九号场
+
+conclusion：
+一天中场地fieldId不变
+
+---------------- 检测台球
+------------21号
+fieldName=十五号桌
+fieldId=1540216776278757378
+fieldId=1540216776278757378
+conclusion:
+一天中同场地不同时间 fieldId相同
+
+------------22
+fieldName=十五号桌
+fieldId=1540216776278757378
+conclusion:
+不同日期场地fieldId相同
+
+
+所以：每个场地 fieldId 固定不变的。  不过请求json中有，无论变不变，都不影响。
+
+request 的json：
