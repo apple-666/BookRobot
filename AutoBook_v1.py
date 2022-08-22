@@ -5,7 +5,10 @@ import datetime
 import requests
 import json
 
-authorization = 'Bearer 8a69c702-3198-4954-a472-9b118f860b5f'
+authorization = input("输入用户authorization: ")
+date = input("输入预订日期(%Y-%m-%d): ")
+
+# authorization = 'Bearer a4fadc96-ad2a-4468-995c-056b67690e63'
 
 headers = {
     'Host': 'mapv2.51yundong.me',
@@ -35,17 +38,17 @@ headers_order = {
 
 def get_all_date():
     url = "https://mapv2.51yundong.me/api/stadium/resources/2c93809e821eb0ed01822a128aaf00b8/dates?stadiumItemId=2c93809e821eb0ed01822a128aaf00b8"
-    print("访问url：显示日期页面：\n"+url)
+    print("get_all_date -》 访问url：显示日期页面：\n"+url)
     response = requests.get(url=url, headers=headers)
     json_text = response.json()
-    print(json_text)
+    return json_text
 
 
 def get_all_stadium():
     # order_date = get_order_date()
-    order_date = '2022-08-24'       # 24 周三
-    url = "https://mapv2.51yundong.me/api/stadium/resources/2c93809e821eb0ed01822a128aaf00b8/matrix?stadiumItemId=2c93809e821eb0ed01822a128aaf00b8&date=" + order_date
-    print("访问url：显示场地页面：\n"+url)
+    # order_date = '2022-08-24'       # 24 周三
+    url = "https://mapv2.51yundong.me/api/stadium/resources/2c93809e821eb0ed01822a128aaf00b8/matrix?stadiumItemId=2c93809e821eb0ed01822a128aaf00b8&date=" + date
+    print("get_all_stadium -》 访问url：显示场地页面：\n"+url)
     response = requests.get(url=url, headers=headers)
     json_text = response.json()
     return json_text
@@ -65,6 +68,7 @@ def get_order_date():
 
 
 def find_free_field():
+    print("get_order_date -》 查找可以下单的场地")
     all_json = get_all_stadium()    # json格式
     data_list = all_json.get('data')
     requests_json = {}
@@ -119,10 +123,10 @@ def kill_order():
 
 
 if __name__ == "__main__":
-    # get_all_date()
-    # print(get_all_stadium())
+    # print(get_all_date())
+    print(get_all_stadium())
     # print(get_order_date())
     # print(find_free_field())
     # print(get_order_date())
-    print(kill_order())
+    # print(kill_order())
 
