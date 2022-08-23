@@ -1,17 +1,20 @@
 # @Time: 2022/8/22 21:48
 # @Author: DoubleApple
 
-import tkinter
-# import tkMessageBox
+from PySide2.QtWidgets import QApplication,QMessageBox
+from PySide2.QtUiTools import QUiLoader
+from  PySide2.QtCore import QFile
 
-top = tkinter.Tk()
+
+class RobotUi:
+    def __init__(self):
+        qfile_state = QFile("ui/robot.ui")
+        qfile_state.open(QFile.ReadOnly)
+        qfile_state.close()
+        self.ui = QUiLoader().load(qfile_state)  # 界面对象
 
 
-def helloCallBack():
-    # tkMessageBox.showinfo("Hello Python", "Hello Runoob")
-    print('1')
-
-B = tkinter.Button(top, text="点我", command=helloCallBack)
-
-B.pack()
-top.mainloop()
+app = QApplication([])
+robot = RobotUi()
+robot.ui.show()
+app.exec_()
