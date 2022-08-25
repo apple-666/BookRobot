@@ -36,6 +36,7 @@ headers_order = {
     'Accept-Encoding': 'gzip, deflate, br'
 }
 
+
 def get_all_date():
     url = "https://mapv2.51yundong.me/api/stadium/resources/2c93809e821eb0ed01822a128aaf00b8/dates?stadiumItemId=2c93809e821eb0ed01822a128aaf00b8"
     print("get_all_date -》 访问url：显示日期页面：\n"+url)

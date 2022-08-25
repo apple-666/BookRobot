@@ -31,6 +31,20 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\BookRobot\AutoBook_v2.py">
+          <value>
+            <Attribute>
+              <option name="separator" value=":" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\BookRobot\GUI.py">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\BookRobot\others.py">
           <value>
             <Attribute>
