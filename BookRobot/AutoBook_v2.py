@@ -11,6 +11,7 @@ authorization = ''
 date = ''
 stadiumItem = ''
 stadiumItemId = ''
+count = 2
 headers = {}
 headers_order = {}
 
@@ -42,12 +43,14 @@ def init_header():
     }
 
 
-def get_info(info_auth, info_date, type1):
-    global authorization, date, stadiumItem, stadiumItemId
+def get_info(info_auth, info_date, type1, count1=2):
+    global authorization, date, stadiumItem, stadiumItemId, count
     authorization = info_auth
     date = info_date
     stadiumItem = type1
+    count = int(count1)
     stadiumItemId = stadium_mp[str(type1)]
+    print(authorization, date, stadiumItem, count)
     init_header()
 
 
@@ -81,6 +84,7 @@ def get_order_date():
 
 
 def find_free_field():
+    global count
     print("get_order_date -》 查找可以下单的场地")
     all_json = get_all_stadium()  # json格式
     data_list = all_json.get('data')
@@ -111,7 +115,7 @@ def find_free_field():
                 detail["resourceDate"] = resourceDate
                 detail["amount"] = int(amount)
                 detail["sessionId"] = sessionId
-                if len(details) < 2:
+                if len(details) < count:
                     details.append(detail)
                 # print(detail)
     requests_json["app"] = "MAP"
@@ -162,7 +166,7 @@ def show_result_field(raw_json):
     # print(get_order_date())
 
     # # 第一步 注入信息
-    # get_info('Bearer 6f44a5be-ede1-4893-a295-17727c058c97', '2022-08-26', '台球')
+    # get_info('Bearer 220beacb-5d1f-47d0-8f3b-b88552f29932', '2022-09-13', '羽毛球')
     # print(get_all_stadium())
     # # 第二部 下单
     # print(kill_order())

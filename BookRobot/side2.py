@@ -13,11 +13,11 @@ window.setWindowTitle('薪资统计')
 
 textEdit = QPlainTextEdit(window)
 textEdit.setPlaceholderText("请输入薪资表")
-textEdit.move(10,25)
-textEdit.resize(300,350)
+textEdit.move(10, 25)
+textEdit.resize(300, 350)
 
 button = QPushButton('统计', window)
-button.move(380,80)
+button.move(380, 80)
 
 window.show()
 

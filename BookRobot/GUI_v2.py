@@ -9,7 +9,9 @@ import AutoBook_v2 as autobook
 
 class RobotUi:
     def __init__(self):
-        qfile_state = QFile("D:/apple/workspace/BookRobot/BookRobot/ui/robot.ui")
+        # qfile_state = QFile("D:/apple/workspace/BookRobot/BookRobot/ui/robot.ui")
+        qfile_state = QFile("ui/robot.ui")
+
         qfile_state.open(QFile.ReadOnly)
         qfile_state.close()
         self.ui = QUiLoader().load(qfile_state)  # 界面对象
@@ -22,10 +24,12 @@ class RobotUi:
         user_auth = self.ui.plainTextEdit.toPlainText()
         user_date = self.ui.plainTextEdit_2.toPlainText()
         user_type = self.ui.plainTextEdit_4.toPlainText()
+        user_count = self.ui.plainTextEdit_5.toPlainText()
         print(user_auth)
         print(user_date)
         print(user_type)
-        autobook.get_info(user_auth, user_date, user_type)
+        print(user_count)
+        autobook.get_info(user_auth, user_date, user_type, user_count)
         # print(autobook.get_all_stadium())
         # print(autobook.find_free_field())
         result = autobook.kill_order()
