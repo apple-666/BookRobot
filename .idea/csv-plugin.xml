@@ -66,6 +66,20 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\BookRobot\ui_save\robot.ui">
+          <value>
+            <Attribute>
+              <option name="separator" value=":" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\BookRobot\ui_save\robot_t.ui">
+          <value>
+            <Attribute>
+              <option name="separator" value=":" />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\autoBook.py">
           <value>
             <Attribute>
